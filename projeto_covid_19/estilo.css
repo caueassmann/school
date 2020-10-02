@@ -1,0 +1,29 @@
+/*código css para criação do mapa do Brasil de forma manipulada, retirado do link:https://github.com/felipeduardo/mapa-brasil-svg/blob/master/index.html*/
+    #svg-map path { fill:#30415d }
+    #svg-map text { fill:#fff; font:12px Arial-BoldMT, sans-serif; cursor:pointer }
+    #svg-map a{ text-decoration:none }
+    #svg-map a:hover { cursor:pointer; text-decoration:none }
+    #svg-map a:hover path{ fill:#8EAEbd !important }
+    #svg-map .circle { fill:#3c6578 }
+    #svg-map a:hover .circle { fill:#8EAEbd !important; cursor:pointer }
+    #svg-map{
+    	width: 70%;
+    	height: auto;
+    	max-width: 900px;
+    	max-height: 700px;
+    	margin: 5px auto;
+    }
+
+
+    *{
+        color: #000;
+    }
+
+    /*paleta de cores*/
+    .vermelho{
+        background-color: #cf6766;
+    }
+
+    .azul{
+        background-color: :#30415d;
+    }
