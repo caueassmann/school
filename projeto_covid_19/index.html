@@ -1,3 +1,6 @@
+<!--Este projeto tem o intuito de dar acesso a população aos casos de Covid-19, sobretudo estaduais, no qual permite 
+ao cidadão analisar de forma numérica, ao invés de gráficas, o que pode permitir impressões mais exatas e possíveis análises de novas ondas -->
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,35 +12,19 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="estilo.css">
 
-    <title>COVID 19</title>
+    <title>STAVID-19</title>
   </head>
   <body>
 <!--conteudos-->
-  <div class="container-fluid" style="background:#cf6766"><!--abre container principal-->
-      <nav class="navbar navbar-expand-sm navbar-dark bg-dark"><!--abre barra de navegação-->
-        <h1 class="navbar-brand"> Analisador COVID-19</h1><!--logo do topo-->
-        <button class="navbar-toggler" data-toggle="collapse" data-target= "#nav-target"><!--abre botão hamburguer-->
-          <span class="navbar-toggler-icon"></span>
-        </button><!-- fecha botão hamburger-->
-        <div class="collapse navbar-collapse" id="nav-target"><!--abre div da lista, para poder criar o hamburguer-->
-          <ul class="navbar-nav ml-auto"><!-- abre itens navegação-->
-            <li class="nav-item">
-              <a href="" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item">
-              <a href="" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item">
-              <a href="" class="nav-link">Home</a>
-            </li>
-          </ul><!-- fecha itens navegação-->
-        </div><!-- fecha div da lista-->
+  <div class="container-fluid primaria" ><!--abre container principal-->
+      <nav class="navbar navbar-expand-sm navbar-dark secundaria"><!--abre barra de navegação-->
+        <h1 class="navbar-brand">STAVID-19: Dados Estaduais De Casos De COVID-19</h1><!--logo do topo-->
       </nav><!-- fecha barra de navegação-->
 
 
-    <div class="row .vermelho"> 
-      <!--abre código svg para criação do mapa do Brasil, manipulado e retirado do link:https://github.com/felipeduardo/mapa-brasil-svg/blob/master/index.html-->
-      <div class="col-12 offset-2 col-md-8 offset-md-0">
+    <div class="row"> 
+      <div class="col-10 offset-2 col-md-8 offset-md-0 col-lg-8"><!--coluna a esquerda-->
+         <!--abre código svg para criação do mapa do Brasil, manipulado e retirado do link:https://github.com/felipeduardo/mapa-brasil-svg/blob/master/index.html-->
         <svg version="1.1" id="svg-map" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 450 460" enable-background="new 0 0 450 460" xml:space="preserve">
     <g>
       <a  id="to">
@@ -377,28 +364,67 @@
         <text transform="matrix(1 0 0 1 425.2129 148.9893)" fill="#FFFFFF">PB</text>
       </a>
     </g>
-        </svg><!--fecha código svg-->
-      </div>
-      <div class="col-md-4">
-        <div class="mt-5 card " style="background: #3c6578; width: 85%">
+        </svg>
+      </div><!--fecha código svg-->
+
+
+      <div class="col-md-4 col-9 offset-2 col-sm-8 offset-sm-3 offset-md-0 col-lg-4"><!--coluna a direita-->
+        <div class="quaternaria my-5 card border border-dark" style=" width: 85%; min-width: 200px"><!--card para info-->
           <div class="card-body">
-            <div id="estado_name" class="display-4 card-title" style="background: #dcdcdc">Estado</div>
-            <div class="row my-5">
-              <img src="bootstrap-icons-1.0.0/bootstrap-icons-1.0.0/exclamation-square.svg" alt="" width="32" height="32" title="exclamation-square" class="ml-3 mr-2">
-              <div id="numero_contaminados" class="h3 "></div>
-              <img src="bootstrap-icons-1.0.0/bootstrap-icons-1.0.0/emoji-dizzy.svg" alt="" width="32" height="32" title="emoji-dizzy" class="ml-4 mr-2">
-              <div id="numero_mortes" class="h3" ></div>
-            </div>
-            <input type="date" name="data_inicial" id="data_inicial" placeholder="data inicial">
-            <input type="date" name="data_final" id="data_final" placeholder="data final">
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row" style="background: blue">oi</div>
-    <div class="row" style="background: yellow">oi</div>
+            <div id="estado_name" class="terciaria display-4 card-title">Estado</div>
+            <div class="row my-5"><!--row para contatenar os dados de contaminados e mortes-->
+
+              <div id="contaminados" class="row ml-4"><!--div contaminados para juntar a imagem com os dados-->
+                <img src="bootstrap-icons-1.0.0/bootstrap-icons-1.0.0/exclamation-square.svg" alt="" width="32" height="32" title="exclamation-square" class="mr-2">
+                <div id="numero_contaminados" class="h3 "></div>
+              </div><!-- fecha div imagem/dados contaminados-->
+
+              <div id="mortes" class="row ml-4 "><!-- div mortes para juntar a imagem com os dados-->
+                <img src="bootstrap-icons-1.0.0/bootstrap-icons-1.0.0/emoji-dizzy.svg" alt="" width="32" height="32" title="emoji-dizzy" class="mr-2">
+                <div id="numero_mortes" class="h3" ></div>
+              </div><!-- fecha div imagem/dados mortes-->
+
+            </div><!-- fecha row-->
+            <div class="form-group row"><!--form da data inicial-->
+              <label for="example-date-input" class="col-form-label h6 mr-2">Data Inicial</label>
+              <div>
+                <input class="form-control" type="date" name="data_inicial" id="data_inicial" >
+              </div>
+            </div><!-- fecha form da data inicial-->
+
+              <div class="form-group row"><!--form da data final-->
+                <label for="example-date-input" class="col-form-label h6 mr-3">Data Final</label>
+                <div>
+                  <input type="date" name="data_final" id="data_final" class="form-control">
+                </div>
+              </div><!-- fecha form da data final-->
+          
+          </div><!--fecha body-card-->
+        </div><!-- fecha card-->
+      </div><!-- fecha coluna da direita-->
+    </div><!-- fecha row-->
+
+    <div class="row mt-5"><!--row do ranking de casos por estado-->
+      <div class=" col-8 offset-2 terciaria" style="width: 90%"><!--div table-->
+        <table class="table table-hover"><!--table-->
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">UF</th>
+            <th scope="col"><button id="casos" type='button' class="secundaria btn btn-link" >Casos</button></th>
+            <th scope="col"><button id="deaths" type='button' class="secundaria btn btn-link">Mortes</button></th>
+          </tr>
+          </thead>
+          <tbody id="dados_estados">
+        
+          </tbody>
+        </table><!--fecha table-->
+      </div><!--fecha div table-->
+    </div><!--fecha row-->
+
+    <div class="mt-3">@Cauê Assmann Silva</div><!--rodape-->
     
-  </div> 
+  </div> <!--fecha container principal-->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
